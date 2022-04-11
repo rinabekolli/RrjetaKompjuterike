@@ -33,6 +33,32 @@ server.on('message', function (msg, info){
     server.send(msg, info.port, 'localhost', function(error){
       if (error){
         server.close();
+         }else{
+      console.log('Data sent !!!');
+    }
+  });
+
+});
+
+//emits when socket is ready and listening for datagram msgs
+server.on('listening', function(){
+  var address = server.address();
+  var port = address.port;
+  var family = address.family;
+  var ipaddr = address.address;
+  console.log('Server is listening at port: ' + port);
+  console.log('Server ip :' + ipaddr);
+  console.log('Server is IP4/IP6 : ' + family);
+});
+
+
+// server.on('close',function(){
+//   console.log('Connection is terminated!');
+// });
+
+// setTimeout(function(){
+// server.close();
+// },360000);
       }else{
         console.log('Data sent !!!');
       }
