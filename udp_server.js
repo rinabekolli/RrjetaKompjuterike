@@ -59,9 +59,4 @@ server.on('listening', function(){
 // setTimeout(function(){
 // server.close();
 // },360000);
-      }else{
-        console.log('Data sent !!!');
-      }
-    });
-  
-  });
+     
